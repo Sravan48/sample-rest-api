@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/casestudy</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">root</property>
+
+		<property name="autoReconnect">true</property>
+		<property name="maxReconnects">1</property>
+		<property name="roundRobinLoadBalance">true</property>
+		<property name="hibernate.connection.zeroDateTimeBehavior">convertToNull</property>
+
+		<property name="show_sql">false</property>
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
+		<property name="bytecode.use_reflection_optimizer">false</property>
+
+		<property name="hibernate.connection.provider_class">org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider</property>
+		<property name="hibernate.c3p0.max_size">10</property>
+		<property name="hibernate.c3p0.min_size">10</property>
+		<property name="hibernate.c3p0.timeout">5000</property>
+		<property name="hibernate.c3p0.max_statements">150</property>
+		<property name="hibernate.c3p0.idle_test_period">300</property>
+		<property name="hibernate.c3p0.acquire_increment">2</property>
+		<property name="hibernate.c3p0.numHelperThreads">100</property>
+
+		<mapping class="com.cognitivescale.rest.pojo.User"></mapping>
+
+	</session-factory>
+
+</hibernate-configuration>
+
